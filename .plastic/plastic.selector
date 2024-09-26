@@ -1,0 +1,4 @@
+repository "2024GameDevClubProject@nore7537@cloud"
+  path "/"
+    br "/main"
+    co "/main"
