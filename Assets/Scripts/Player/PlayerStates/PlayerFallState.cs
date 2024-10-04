@@ -17,6 +17,8 @@ public class PlayerFallState : PlayerBaseState
     public override void Tick()
     {
         ApplyGravity();
+        CalculateMoveDirection();
+        FaceMoveDirection();
         Move();
 
         if (stateMachine.Controller.isGrounded)

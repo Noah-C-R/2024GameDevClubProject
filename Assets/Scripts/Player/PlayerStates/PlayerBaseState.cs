@@ -18,7 +18,6 @@ public abstract class PlayerBaseState : State
         Vector3 moveDirection = cameraForward.normalized * stateMachine.InputReader.moveComposite.y + cameraRight.normalized * stateMachine.InputReader.moveComposite.x;
 
         stateMachine.Velocity.x = moveDirection.x * stateMachine.MovementSpeed;
-        stateMachine.Velocity.z = moveDirection.z * stateMachine.MovementSpeed;
     }
 
     protected void FaceMoveDirection()
