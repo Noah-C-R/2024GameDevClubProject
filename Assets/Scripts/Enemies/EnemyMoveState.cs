@@ -20,7 +20,7 @@ public class EnemyMoveState : EnemyBaseState
             direction *=-1;
         }
         RotateTowardsPlayer(enemy);
-        enemy.transform.position += direction * enemy.enemyStats.speed * Time.deltaTime;
+        enemy.transform.position += direction * enemy.speed * Time.deltaTime;
 
         if(IsInRangeOfPlayer(enemy))
         {

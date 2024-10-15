@@ -8,7 +8,7 @@ public abstract class EnemyBaseState
     public abstract void ExitState(EnemyStateManager enemy);
     protected bool IsInRangeOfPlayer(EnemyStateManager enemy)
     {
-        return Math.Abs(enemy.transform.position.x-enemy.player.transform.position.x) < enemy.enemyStats.attackRange;
+        return Math.Abs(enemy.transform.position.x-enemy.player.transform.position.x) < enemy.attackRange;
     }
     protected void RotateTowardsPlayer(EnemyStateManager enemy)
     {

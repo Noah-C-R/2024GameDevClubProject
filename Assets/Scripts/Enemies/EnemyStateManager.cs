@@ -7,16 +7,14 @@ using UnityEngine;
 public class EnemyStateManager : MonoBehaviour
 {
     EnemyBaseState currentState;
-    [NonSerialized]public EnemyStats enemyStats;
     public GameObject player;
-    
+    public float speed = 10.0f;
+    public float attackRange = 5.0f;
     public Dictionary<string,EnemyBaseState> enemyStates;
 
 
     void Start()
     {
-        enemyStats = gameObject.GetComponent<EnemyStats>();
-
         InitializeStates();
         currentState = enemyStates["Idle"];
         currentState.EnterState(this);
