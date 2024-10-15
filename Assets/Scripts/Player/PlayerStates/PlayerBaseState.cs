@@ -32,9 +32,9 @@ public abstract class PlayerBaseState : State
 
     protected void ApplyGravity()
     {
-        if (stateMachine.Velocity.y > Physics.gravity.y)
+        if (stateMachine.Velocity.y > stateMachine.Gravity)
         {
-            stateMachine.Velocity.y += Physics.gravity.y * Time.deltaTime;
+            stateMachine.Velocity.y += stateMachine.Gravity * Time.deltaTime;
         }
     }
 

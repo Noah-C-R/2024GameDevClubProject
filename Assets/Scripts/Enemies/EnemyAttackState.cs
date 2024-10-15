@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class EnemyAttackState : EnemyBaseState
 {
     public override void EnterState(EnemyStateManager enemy)
@@ -11,10 +7,17 @@ public class EnemyAttackState : EnemyBaseState
 
     public override void UpdateState(EnemyStateManager enemy)
     {
-        
+        if(AttackEnd() && !IsInRangeOfPlayer(enemy))
+        {
+            enemy.SwitchState("Move");
+        }
     }
     public override void ExitState(EnemyStateManager enemy)
     {
 
+    }
+    private bool AttackEnd()
+    {
+        return true;
     }
 }

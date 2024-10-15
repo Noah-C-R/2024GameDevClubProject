@@ -19,17 +19,16 @@ public class EnemyMoveState : EnemyBaseState
         {
             direction *=-1;
         }
-        enemy.transform.position += new Vector3(direction.x,0,0) * enemy.enemyStats.speed * Time.deltaTime;
-        if(isInRangeOfPlayer(enemy))
+        RotateTowardsPlayer(enemy);
+        enemy.transform.position += direction * enemy.enemyStats.speed * Time.deltaTime;
+
+        if(IsInRangeOfPlayer(enemy))
         {
             enemy.SwitchState("Attack");
         }
     }
 
-    private bool isInRangeOfPlayer(EnemyStateManager enemy)
-    {
-        return Math.Abs(enemy.transform.position.x-enemy.player.transform.position.x) < enemy.enemyStats.attackRange;
-    } 
+    
     public override void ExitState(EnemyStateManager enemy)
     {
 
