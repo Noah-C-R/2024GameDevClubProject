@@ -11,7 +11,7 @@ public class PlayerStateMachine : StateMachine
     [field: SerializeField]
     public float JumpForce { get; private set; } = 5f;
     [field: SerializeField]
-    public float Gravity { get; private set; } = -9.8f;
+    public float Gravity { get; private set; } = -16f;
     public float LookRotationDampFactor { get; private set; } = 30f;
     public Transform MainCamera { get; private set; }
     public InputReader InputReader { get; private set; }
