@@ -9,7 +9,7 @@ public class EnemyMoveState : EnemyBaseState
 
     public override void EnterState(EnemyStateManager enemy)
     {
-     Debug.Log("Enter Move State");
+     //Debug.Log("Enter Move State");
     }
 
     public override void UpdateState(EnemyStateManager enemy)

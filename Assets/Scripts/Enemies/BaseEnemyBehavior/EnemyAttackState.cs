@@ -32,13 +32,13 @@ public class EnemyAttackState : EnemyBaseState
             }
             else
             {
-                Debug.Log("Cooling down");
+                //Debug.Log("Cooling down");
             }
             
         }
         else
         {
-            Debug.Log("Attacking!");
+            //Debug.Log("Attacking!");
         }
        
     }
