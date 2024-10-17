@@ -6,14 +6,16 @@ using UnityEngine;
 
 public class EnemyStateManager : MonoBehaviour
 {
-    EnemyBaseState currentState;
+    protected EnemyBaseState currentState;
     public GameObject player;
     public float speed = 10.0f;
     public float attackRange = 5.0f;
+    public float attackCooldown = 1.0f;
+    public float attackTime = 300.0f; // Temporary variable mean to represent attack time
     public Dictionary<string,EnemyBaseState> enemyStates;
 
 
-    void Start()
+    private void Start()
     {
         InitializeStates();
         currentState = enemyStates["Idle"];
