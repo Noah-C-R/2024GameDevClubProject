@@ -16,7 +16,10 @@ public class RangedAttackState : EnemyAttackState
     protected override void Attack(EnemyStateManager enemy)
     {
         Vector3 playerPos = enemy.player.transform.position;
-        GameObject.Instantiate(projectile, spawnPos.position, spawnPos.transform.rotation);
+        Vector3 direction = enemy.transform.position - playerPos + new Vector3(0,1,0); // Offset player height
+        Quaternion rotation = Quaternion.LookRotation(direction);
+        //GameObject.Instantiate(projectile, spawnPos.position, spawnPos.transform.rotation);
+        GameObject.Instantiate(projectile, spawnPos.position, rotation);
         isAttacking = true;
         canAttack = false;
         enemy.StartCoroutine(AttackDuration(enemy.attackTime, enemy));
