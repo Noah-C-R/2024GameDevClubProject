@@ -8,6 +8,8 @@ public class EnemyProjectile : MonoBehaviour
     private float speed = 10.0f;
     [SerializeField]
     private float lifeTime = 10.0f;
+    [SerializeField]
+    private float damage = 10.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +28,8 @@ public class EnemyProjectile : MonoBehaviour
         {
             // Call player do damage method
             Destroy(gameObject);
+            HealthManager healthManager = other.gameObject.GetComponent<HealthManager>();
+            healthManager.DealDmg(damage);
             return;
         }
         // Ground collision layer
