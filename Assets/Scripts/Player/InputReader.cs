@@ -14,11 +14,25 @@ public class InputReader : MonoBehaviour, Player_Controls.IPlayerControlsActions
     [SerializeField]
     private bool isEmpowered = false;
 
+    private static InputReader _instance;
+    public static InputReader Instance { get { return _instance; } }
 
+    [SerializeField]
     public Action OnJumpPerformed, OnAttackPerformed, OnBlockPerformed, OnChargeHeld, OnChargeCompleted;
 
     private Player_Controls controls;
 
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            Destroy(this.gameObject);
+        }
+        else
+        {
+            _instance = this;
+        }
+    }
     private void OnEnable()
     {
         if (controls != null)
@@ -40,7 +54,7 @@ public class InputReader : MonoBehaviour, Player_Controls.IPlayerControlsActions
         moveComposite = context.ReadValue<Vector2>();
     }
 
-    //breaking this down: the if statement is to prevent us from calling context.performed twice
+    //breaking these methods down: the if statement is to prevent us from calling context.performed twice
     //...(once when button is pressed, then again when button is released)
     //we invoke an action (and also check if it exists using the "?.")
     public void OnJump(InputAction.CallbackContext context)
