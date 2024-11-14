@@ -16,7 +16,7 @@ public class PlayerMoveState : PlayerBaseState
 
         stateMachine.Animator.CrossFadeInFixedTime(MoveBlendTreeHash, CrossFadeDuration);
 
-        stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
+        //stateMachine.InputReader.OnJumpPerformed += SwitchToJumpState;
     }
 
     //each tick (aka update frame) we perform movement logic here
@@ -36,7 +36,7 @@ public class PlayerMoveState : PlayerBaseState
 
     public override void Exit()
     {
-        stateMachine.InputReader.OnJumpPerformed -= SwitchToJumpState;
+        //stateMachine.InputReader.OnJumpPerformed -= SwitchToJumpState;
     }
 
     private void SwitchToJumpState()
