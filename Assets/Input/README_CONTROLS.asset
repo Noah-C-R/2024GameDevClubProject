@@ -23,10 +23,13 @@ MonoBehaviour:
 
       Space | South button : jump
 
-      J | Shoulder
-      bumpers : block
+      F | East
+      button: attack
 
-      K | Trigger buttons : charge
+      J | Shoulder bumpers : block
+
+      K | Trigger buttons
+      : charge
 
 '
     linkText: 

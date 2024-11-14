@@ -31,10 +31,6 @@ public class PlayerMovement : MonoBehaviour
         inputReader.OnJumpPerformed += Jump;
     }
 
-    private void OnEnable()
-    {
-
-    }
     private void OnDisable()
     {
         inputReader.OnJumpPerformed -= Jump;
